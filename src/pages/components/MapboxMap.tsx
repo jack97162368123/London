@@ -22,7 +22,7 @@ const MapboxMap = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/jackrob/clge1o88t006201l0husblrfp/draft",
+      style: "mapbox://styles/jackrob/clhs0mxmz020n01qy20p359nq",
       center: [-0.1278, 51.5074],
       zoom: 10,
     });
