@@ -22,7 +22,7 @@ const MapboxMap = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/jackrob/clhs0mxmz020n01qy20p359nq",
+      style: "mapbox://styles/jackrob/clge1o88t006201l0husblrfp/draft",
       center: [-0.1278, 51.5074],
       zoom: 10,
     });
@@ -198,26 +198,15 @@ const MapboxMap = () => {
 
   const toggleFullscreen = () => {
     const elem = mapContainerRef.current;
-    if (elem && !document.fullscreenElement) {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
+
+    if (elem && elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem && elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem && elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem && elem.requestFullscreen) {
+      elem.requestFullscreen();
     }
   };
 
