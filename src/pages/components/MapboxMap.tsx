@@ -196,7 +196,42 @@ const MapboxMap = () => {
     };
   }, []);
 
-  return <div className="map-container" ref={mapContainerRef}></div>;
+  const toggleFullscreen = () => {
+    const elem = mapContainerRef.current;
+    if (elem && !document.fullscreenElement) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  };
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <div className="map-container" ref={mapContainerRef}></div>
+      <button
+        style={{ position: 'absolute', top: '10px', right: '10px' }}
+        onClick={toggleFullscreen}
+      >
+        Full Screen
+      </button>
+    </div>
+  );
 };
 
 export default MapboxMap;
